@@ -11,18 +11,19 @@ You are given four audio clips, in the following order:
 4. Converted audio B (from voice conversion model B)
 
 **Your task:**  
-Decide which converted audio (**A** or **B**) sounds more like the target speaker in terms of voice identity (e.g., timbre, pitch, tone).  
-Ignore background noise and content — focus only on speaker similarity.
+Ignore background noise and content — focus only on speaker similarity. Decide which converted audio sounds more like the target speaker in terms of voice identity (e.g., timbre, pitch, tone)? (a) Converted audio A (b) Converted audio B.
 """
 
 STRICT_OUTPUT = """
 **Output format:**
-Respond with either **A** or **B** only.
+Respond with either **(a)** or **(b)** only.
 """
+
 
 def getPrompt(
     strict: bool = False,
 ):
     if strict:
         return PROMPT + STRICT_OUTPUT
-    return PROMPT
+    else:
+        return PROMPT
